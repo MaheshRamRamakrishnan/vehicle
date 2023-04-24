@@ -1,0 +1,13 @@
+{
+    "builds":[{
+       "src": "vehicle/wsgi.py",
+       "use": "@vercel/python",
+       "config": { "maxLambdasize": "15mb", "runtime": "python3.9" }
+    }],
+    "routes":[
+      {
+        "src": "/(.*)",
+        "dest": "vehicle/wsgi.py"
+      }
+      ]
+}
