@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 """
 WSGI config for vehicle project.
 
@@ -15,8 +13,5 @@ from django.core.wsgi import get_wsgi_application
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'vehicle.settings')
 
 application = get_wsgi_application()
-<<<<<<< HEAD
-=======
 
->>>>>>> origin/main
 app = application
