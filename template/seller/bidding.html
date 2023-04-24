@@ -1,0 +1,104 @@
+{% extends 'seller/seller_home.html' %}
+{% load static %}
+{% block content %}
+
+
+<style>
+table, th, td {
+  border:1px solid black;
+
+  font-color:white;
+
+}
+
+th{
+ background-color:black;
+ color:white;
+
+}
+
+
+h1{color:white}
+</style>
+
+
+
+   <div class="container" style="margin-top:80px;margin-left:280px;"><br>
+        <center>
+            <h1>Bidded Amount by seller</h1>
+        </center>
+        <br><br>
+
+
+        <table class="table" style="margin-left:-280px">
+            <thead>
+
+
+            <tr style="font-family:verdana; background-color:white;text-align: center;">
+  <tr>
+      <th>Car Name</th>
+      <th>Brand</th>
+      <th>KM Driven</th>
+      <th>Year</th>
+      <th>Quoted price</th>
+      <th>Seller bid</th>
+
+<!--      <th>No OF Gear</th>-->
+<!--      <th>Gear Condition</th>-->
+<!--      <th>Air Bag Count</th>-->
+<!--      <th>Airbag Condition</th>-->
+<!--      <th>Tyre Condition</th>-->
+<!--      <th>Light Condition</th>-->
+
+<!--      <th>Comment</th>-->
+<!--      <th>VALUATION</th>-->
+
+      <th>Decision</th>
+                <th>Decision</th>
+
+ </tr>
+            </thead>
+            <tbody>
+            {% for data in datas %}
+            <tr style="background-color:#b38600;color:white;text-align: center;">
+            <td style="color:white;">{{data.car_name}}</td>
+            <td style="color:white;">{{data.brand}}</td>
+            <td style="color:white;">{{data.km}}</td>
+            <td style="color:white;">{{data.year}}</td>
+            <td style="color:white;">{{data.quotation}}</td>
+            <td style="color:white;">{{data.bid}}</td>
+
+<!--            <td style="color:white;">{{data.gear}}</td>-->
+<!--            <td style="color:white;">{{data.gear_condition}}</td>-->
+<!--            <td style="color:white;">{{data.air_bag}}</td>-->
+<!--            <td style="color:white;">{{data.airbag_condition}}</td>-->
+<!--            <td style="color:white;">{{data.tyre_condition}}</td>-->
+<!--                <td style="color:white;">{{data.light_condition}}</td>-->
+<!--                <td style="color:white;">{{data.comment}}</td>-->
+<!--                <td style="color:white;">{{data.quotation}}</td>-->
+<!--            <td style="color:white;"><form method="post" action="#">-->
+<!--                                      {% csrf_token %}-->
+<!--                                     <div>-->
+<!--                                     <textarea name="opinion" id="opinion" style="font-family:sans-serif;font-size:1.2em;"></textarea>-->
+<!--                                     </div>-->
+<!--                                     <input type="submit" value="Submit">-->
+<!--                                     </form>-->
+<!--            </td>-->
+
+
+
+
+
+            <td style="color:white;"><a href="/accept/{{data.id}}/"><input type="button" value="ACCEPT"></a></td>
+            <td style="color:white;"><a href="/deny/{{data.id}}/"><input type="button" value="DENY"></a></td>
+
+  </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+
+</div>
+
+{% endblock %}

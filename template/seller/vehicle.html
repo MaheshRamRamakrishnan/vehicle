@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+{% extends 'seller/seller_home.html' %}
+{% block content %}
+<html>
+{% load static %}
+<head>
+	<meta charset="utf-8">
+	<title>Form-v10 by Colorlib</title>
+	<!-- Mobile Specific Metas -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<!-- Font-->
+	<link rel="stylesheet" type="text/css" href="{% static 'seller_details/css/montserrat-font.	css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'seller_details/fonts/material-design-iconic-font/css/material-design-iconic-font.min.css' %}">
+	<!-- Main Style Css -->
+    <link rel="stylesheet" href="{% static 'seller_details/css/style.css' %}"/>
+</head>
+<body class="form-v10">
+	<div class="page-content">
+		<div class="form-v10-content">
+			<form class="form-detail" action="/vehicle_details/" method="post" id="myform">
+				{% csrf_token %}
+				<div class="form-left">
+					<h2>vehicle Infomation</h2>
+					<div class="form-row">
+						<select name="brand">
+						    <option class="option" >Brand</option>
+						    <option class="option" value="Honda">Honda</option>
+						    <option class="option" value="Dealership">Maruti Suzuki</option>
+						    <option class="option" value="Consultancy">Hyundai India</option>
+							<option class="option" value="Honda">Tata Motors</option>
+						    <option class="option" value="Dealership">Mahindra</option>
+						    <option class="option" value="Consultancy">Bajaj</option>
+							<option class="option" value="Honda">Eicher Motors</option>
+						    <option class="option" value="Dealership">Force Motors</option>
+						    <option class="option" value="Consultancy">Hindustan Motors</option>
+							<option class="option" value="Honda">BMW India</option>
+						    <option class="option" value="Dealership">Jeep </option>
+						    <option class="option" value="Consultancy">Kia  </option>
+							<option class="option" value="Honda">Mercedes-Benz</option>
+						    <option class="option" value="Dealership">Nissan Motor</option>
+						    <option class="option" value="Consultancy">Renault</option>
+							<option class="option" value="Consultancy">Volkswagen</option>
+							<option class="option" value="Consultancy">Datsun</option>
+
+						</select>
+						<span class="select-btn">
+						  	<i class="zmdi zmdi-chevron-down"></i>
+						</span>
+					</div>
+					<div class="form-group">
+						<div class="form-row form-row-1">
+							<input type="text" name="year" id="year" class="input-text" placeholder="Year" required>
+						</div>
+						<div class="form-row form-row-2">
+							<input type="text" name="km_driven" id="km_driven" class="input-text" placeholder="KM Driven" required>
+						</div>
+					</div>
+					<div class="form-row">
+						<select name="fuel">
+						    <option >Fuel</option>
+						    <option value="CNG&Hybrids">CNG & Hybrids</option>
+						    <option value="Diesel">Diesel</option>
+						    <option value="Electric">Electric</option>
+							<option value="LPG">LPG</option>
+							<option value="Petrol">Petrol</option>
+						</select>
+						<span class="select-btn">
+						  	<i class="zmdi zmdi-chevron-down"></i>
+						</span>
+					</div>
+					<div class="form-row">
+						<select name="transmission">
+						    <option >Transmission</option>
+						    <option value="Automatic">Automatic</option>
+						    <option value="Manual">Manual</option>
+						</select>
+						<span class="select-btn">
+						  	<i class="zmdi zmdi-chevron-down"></i>
+						</span>
+					</div>
+					<div class="form-row">
+						<select name="No_of_Owners">
+						    <option >No. of Owners </option>
+						    <option value="1st">1st</option>
+						    <option value="2nd">2nd</option>
+							<option value="3rd">3rd</option>
+						    <option value="4th">4th</option>
+							<option value="4+">4+</option>
+						</select>
+						<span class="select-btn">
+						  	<i class="zmdi zmdi-chevron-down"></i>
+						</span>
+					</div>
+					<div class="form-row">
+						<input type="text" name="Registration_City" class="Registration_City" id="Registration_City" placeholder="Registration City" required>
+					</div>
+<!--					<div class="form-group">-->
+<!--						<div class="form-row form-row-3">-->
+<!--							<input type="text" name="Gender" class="Gender" id="Gender" placeholder="Gender" required>-->
+<!--						</div>-->
+<!--						<div class="form-row form-row-4">-->
+<!--							<select name="employees">-->
+<!--							    <option value="employees">Employees</option>-->
+<!--							    <option value="trainee">Trainee</option>-->
+<!--							    <option value="colleague">Colleague</option>-->
+<!--							    <option value="associate">Associate</option>-->
+<!--							</select>-->
+<!--							<span class="select-btn">-->
+<!--							  	<i class="zmdi zmdi-chevron-down"></i>-->
+<!--							</span>-->
+<!--						</div>-->
+<!--					</div>-->
+				</div>
+				<div class="form-right">
+					<h2>Technical Details</h2>
+					<div class="form-row">
+						<select name="car_type">
+						    <option >Car type</option>
+						    <option value="Hatchback">Hatchback</option>
+						    <option value="Sedan">Sedan</option>
+						    <option value="SUV">SUV</option>
+							<option value="Muv">Muv</option>
+						    <option value="Crossover">Crossover</option>
+						</select>
+						<span class="select-btn">
+						  	<i class="zmdi zmdi-chevron-down"></i>
+						</span>
+					</div>
+					<div class="form-row">
+						<input type="text" name="insurance" id="insurance" class="input-text"  placeholder="Insurance Status">
+					</div>
+					<div class="form-row">
+						<input type="text" name="rc" id="rc" class="input-text"  placeholder="RC status">
+					</div>
+					<div class="form-row">
+						<input type="text" name="warranty" id="warranty" class="input-text"  placeholder="warranty status">
+					</div>
+					<div class="form-row">
+						<input type="number" name="price" class="price" id="price" placeholder="Price Quote" required>
+					</div>
+<!--					<div class="form-row">-->
+<!--						<input type="text" name="street" class="street" id="street" placeholder="Street + Nr" required>-->
+<!--					</div>-->
+<!--					<div class="form-row">-->
+<!--						<input type="text" name="additional" class="additional" id="additional" placeholder="Additional Information" required>-->
+<!--					</div>-->
+<!--					<div class="form-group">-->
+<!--						<div class="form-row form-row-1">-->
+<!--							<input type="text" name="zip" class="zip" id="zip" placeholder="Zip Code" required>-->
+<!--						</div>-->
+<!--						<div class="form-row form-row-2">-->
+<!--							<select name="">-->
+<!--							    <option value="place">Place</option>-->
+<!--							    <option value="Street">Street</option>-->
+<!--							    <option value="District">District</option>-->
+<!--							    <option value="City">City</option>-->
+<!--							</select>-->
+<!--							<span class="select-btn">-->
+<!--							  	<i class="zmdi zmdi-chevron-down"></i>-->
+<!--							</span>-->
+<!--						</div>-->
+<!--					</div>-->
+<!--					<div class="form-row">-->
+<!--						<select name="country">-->
+<!--						    <option value="country">Country</option>-->
+<!--						    <option value="Vietnam">Vietnam</option>-->
+<!--						    <option value="Malaysia">Malaysia</option>-->
+<!--						    <option value="India">India</option>-->
+<!--						</select>-->
+<!--						<span class="select-btn">-->
+<!--						  	<i class="zmdi zmdi-chevron-down"></i>-->
+<!--						</span>-->
+<!--					</div>-->
+<!--					<div class="form-group">-->
+<!--						<div class="form-row form-row-1">-->
+<!--							<input type="text" name="code" class="code" id="code" placeholder="Code +" required>-->
+<!--						</div>-->
+<!--						<div class="form-row form-row-2">-->
+<!--							<input type="text" name="price" class="price" id="price" placeholder="Price Quote" required>-->
+<!--						</div>-->
+<!--					</div>-->
+<!--					<div class="form-row">-->
+<!--						<input type="text" name="email" id="your_email" class="input-text" required pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}" placeholder="Your Email">-->
+<!--					</div>-->
+<!--					<div class="form-checkbox">-->
+<!--&lt;!&ndash;						<label class="container"><p>I do accept the <a href="#" class="text">Terms and Conditions</a> of your site.</p>&ndash;&gt;-->
+<!--						  	<input type="checkbox" name="checkbox">-->
+<!--						  	<span class="checkmark"></span>-->
+<!--						</label>-->
+<!--					</div>-->
+					<div class="form-row-last">
+						<input type="submit" name="register" class="register" value="Register ">
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+{% endblock %}
+</html>

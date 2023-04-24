@@ -1,0 +1,102 @@
+{% extends 'management/management_home.html' %}
+{% load static %}
+{% block content %}
+
+
+<style>
+table, th, td {
+  border:1px solid black;
+
+  font-color:white;
+
+}
+
+th{
+ background-color:black;
+ color:white;
+
+}
+
+
+h1{color:white}
+</style>
+<script>
+{% for msg in messages %}
+
+	 alert('{{ msg }}');
+{% endfor %}
+
+</script>
+
+
+   <div class="container" style="margin-top:-100px"><br><br>
+        <center>
+            <h1>VEHICLE DETAILS</h1></center>
+        <br><br>
+
+
+        <table class="table" style="margin-left:-30px">
+            <thead>
+
+
+            <tr style="font-family:verdana; background-color:white;text-align: center;">
+  <tr>
+      <th>Brand</th>
+      <th>year</th>
+      <th>km_driven</th>
+      <th>fuel</th>
+      <th>transmission</th>
+      <th>No_of_Owners</th>
+      <th>Registration_City</th>
+      <th>car_type</th>
+      <th>insurance</th>
+      <th>rc</th>
+      <th>warranty</th>
+
+      <th>price</th>
+                <th>To analysis</th>
+
+<!--      <th>status</th>-->
+
+ </tr>
+            </thead>
+            <tbody>
+            {% for data in datas %}
+            <tr style="background-color:#256D85;color:white;text-align: center;">
+            <td style="color:white;">{{data.brand}}</td>
+            <td style="color:white;">{{data.year}}</td>
+            <td style="color:white;">{{data.km_driven}}</td>
+            <td style="color:white;">{{data.fuel}}</td>
+            <td style="color:white;">{{data.transmission}}</td>
+            <td style="color:white;">{{data.No_of_Owners}}</td>
+            <td style="color:white;">{{data.Registration_City}}</td>
+            <td style="color:white;">{{data.car_type}}</td>
+            <td style="color:white;">{{data.insurance}}</td>
+            <td style="color:white;">{{data.rc}}</td>
+            <td style="color:white;">{{data.warranty}}</td>
+                <td style="color:white;">{{data.price}}</td>
+<!--            <td style="color:white;"><form method="post" action="/comment1/{{data.id}}/">-->
+<!--                                      {% csrf_token %}-->
+<!--                                     <div>-->
+<!--                                     <textarea name="comment" id="comment" style="font-family:sans-serif;font-size:1.2em;"></textarea>-->
+<!--                                     </div>-->
+<!--                                     <input type="submit" value="Submit">-->
+<!--                                     </form>-->
+            </td>
+
+
+
+
+
+            <td style="color:white;"><a href="/send_analysis/{{data.id}}/"><input type="button" value="Send"></a></td>
+
+  </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+
+</div>
+
+{% endblock %}

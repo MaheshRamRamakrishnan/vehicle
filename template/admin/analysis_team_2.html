@@ -1,0 +1,92 @@
+{% extends 'admin/admin_home.html' %}
+{% load static %}
+{% block content %}
+
+
+<style>
+table, th, td {
+  border:1px solid black;
+
+  font-color:white;
+
+}
+
+th{
+ background-color:black;
+ color:white;
+
+}
+
+
+h1{color:white}
+</style>
+
+
+
+   <div class="container" style="margin-top:-250px;margin-left:50px"><br><br>
+        <center>
+            <h1>ANALYSIS TEAM</h1></center>
+        <br><br>
+
+
+        <table class="table" style="margin-left:-150">
+            <thead>
+
+
+            <tr style="font-family:verdana; background-color:white;text-align: center;">
+  <tr>
+
+      <th>name</th>
+      <th>last_name</th>
+      <th>email</th>
+      <th>eid</th>
+      <th>gender</th>
+      <th>address</th>
+      <th>city</th>
+<!--      <th>Zip</th>-->
+<!--      <th>Place</th>-->
+      <th>pin</th>
+      <th>designation</th>
+      <th>team_no</th>
+<!--      <th>Approve</th>-->
+
+<!--      <th>Reject</th>-->
+
+<!--      <th>status</th>-->
+
+ </tr>
+            </thead>
+            <tbody>
+            {% for data in datas %}
+            <tr style="background-color:#808000;color:white;text-align: center;">
+<!--            <td style="color:white;">{{data.title}}</td>-->
+            <td style="color:white;">{{data.name}}</td>
+            <td style="color:white;">{{data.last_name}}</td>
+            <td style="color:white;">{{data.email}}</td>
+            <td style="color:white;">{{data.eid}}</td>
+            <td style="color:white;">{{data.gender}}</td>
+<!--            <td style="color:white;">{{data.gender}}</td>-->
+<!--&lt;!&ndash;            -->
+            <td style="color:white;">{{data.address}}</td>
+            <td style="color:white;">{{data.city}}</td>
+            <td style="color:white;">{{data.pin}}</td>-->
+            <td style="color:white;">{{data.designation}}</td>
+            <td style="color:white;">{{data.team_no}}</td>
+<!--             <td><a href="/approve_seller/{{data.id}}"><input type="button" value="approve"></a></td>-->
+<!--             <td><a href="/reject_seller/{{data.id}}"><input type="button" value="Reject"></a></td>-->
+
+
+
+
+
+<!--            <td style="color:white;"><a href="/send_admin/{{data.id}}/"><input type="button" value="Approve"></a></td>-->
+
+  </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+{% endblock %}
