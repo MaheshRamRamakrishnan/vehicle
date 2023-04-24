@@ -1,0 +1,95 @@
+{% extends 'management/management_home.html' %}
+{% load static %}
+{% block content %}
+
+
+<style>
+table, th, td {
+  border:1px solid black;
+
+  font-color:white;
+
+}
+
+th{
+ background-color:black;
+ color:white;
+
+}
+
+
+h1{color:white}
+</style>
+
+
+
+   <div class="container" style="margin-top:-250px"><br><br>
+        <center>
+            <h1>SELLER DETAILS</h1></center>
+        <br><br>
+
+
+        <table class="table" style="margin-left:-100px">
+            <thead>
+
+
+            <tr style="font-family:verdana; background-color:white;text-align: center;">
+  <tr>
+      <th>Title</th>
+      <th>FirstName</th>
+      <th>lastName</th>
+      <th>Employment</th>
+      <th>Company</th>
+      <th>Gender</th>
+      <th>street</th>
+      <th>zip</th>
+      <th>place</th>
+      <th>phone</th>
+      <th>Email</th>
+
+      <th>comment</th>
+                <th>To admin</th>
+
+<!--      <th>status</th>-->
+
+ </tr>
+            </thead>
+            <tbody>
+            {% for data in datas %}
+            <tr style="background-color:#256D85;color:white;text-align: center;">
+            <td style="color:white;">{{data.title}}</td>
+            <td style="color:white;">{{data.first_name}}</td>
+            <td style="color:white;">{{data.last_name}}</td>
+            <td style="color:white;">{{data.employment}}</td>
+            <td style="color:white;">{{data.company}}</td>
+            <td style="color:white;">{{data.Gender}}</td>
+            <td style="color:white;">{{data.street}}</td>
+            <td style="color:white;">{{data.zip}}</td>
+            <td style="color:white;">{{data.place}}</td>
+            <td style="color:white;">{{data.phone}}</td>
+            <td style="color:white;">{{data.email}}</td>
+            <td style="color:white;"><form method="post" action="/comment1/{{data.id}}/">
+                                      {% csrf_token %}
+                                     <div>
+                                     <textarea name="comment" id="comment" style="font-family:sans-serif;font-size:1.2em;"></textarea>
+                                     </div>
+                                     <input type="submit" value="Submit">
+                                     </form>
+            </td>
+
+
+
+
+
+            <td style="color:white;"><a href="/send_admin/{{data.id}}/"><input type="button" value="Send"></a></td>
+
+  </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+
+</div>
+
+{% endblock %}
