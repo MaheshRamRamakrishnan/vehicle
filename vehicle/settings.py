@@ -32,7 +32,6 @@ ALLOWED_HOSTS = ['.vercel.app']
 INSTALLED_APPS = [
     'admins',
     'analysis',
-    'buyer',
     'home',
     'management',
     'seller',

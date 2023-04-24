@@ -22,7 +22,6 @@ urlpatterns = [
     path('', include('analysis.urls')),
     path('', include('home.urls')),
     path('', include('management.urls')),
-    path('', include('buyer.urls')),
     path('', include('seller.urls'))
 
 ]
